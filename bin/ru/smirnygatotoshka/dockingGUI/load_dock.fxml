@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="1054.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"> <!--fx:controller="ru.smirnygatotoshka.dockingGUI.Controller"-->
+  <tabs>
+    <Tab text="Конфигурация запуска">
+         <content>
+                  <ScrollPane layoutX="44.0" layoutY="207.0" prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <VBox minHeight="0.0" minWidth="0.0" prefHeight="1000.0" prefWidth="1000.0">
+                           <children>
+                              <Button fx:id="chooseMGL" mnemonicParsing="false" prefHeight="59.0" prefWidth="313.0" text="Путь к MGLTools">
+                                 <font>
+                                    <Font name="Segoe Print" size="24.0" />
+                                 </font>
+                              </Button>
+                              <TextArea fx:id="pathMGL" prefHeight="46.0" prefWidth="597.0" promptText="Путь к MGLTools">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextArea>
+                              <Button fx:id="chooseWorkspace" mnemonicParsing="false" text="Путь к рабочей области">
+                                 <font>
+                                    <Font name="Segoe Print" size="24.0" />
+                                 </font>
+                              </Button>
+                              <TextArea fx:id="pathWorkspace" prefHeight="64.0" prefWidth="637.0" promptText="Путь к рабочей папке">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextArea>
+                              <Label text="Входной файл(HDFS)">
+                                 <font>
+                                    <Font name="Segoe Print" size="24.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="pathInput" prefHeight="54.0" prefWidth="643.0" promptText="Входной файл,формат csv">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextArea>
+                              <Label text="Выходная директория(HDFS)">
+                                 <font>
+                                    <Font name="Segoe Print" size="24.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="pathOutput" prefHeight="54.0" prefWidth="637.0" promptText="Выходная директория">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextArea>
+                              <Label prefHeight="43.0" prefWidth="175.0" text="Имя запуска">
+                                 <font>
+                                    <Font name="Segoe Print" size="24.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="name" prefHeight="54.0" prefWidth="639.0" promptText="ID запуска">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextArea>
+                              <Button fx:id="chooseJar" mnemonicParsing="false" prefHeight="59.0" prefWidth="345.0" text="Путь к jar файлу">
+                                 <font>
+                                    <Font name="Segoe Print" size="24.0" />
+                                 </font>
+                              </Button>
+                              <TextArea fx:id="pathJar" prefHeight="54.0" prefWidth="643.0" promptText="Путь к MapReduceDocking.jar">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextArea>
+                              <Button fx:id="chooseHadoop" mnemonicParsing="false" prefHeight="59.0" prefWidth="345.0" text="Путь к hadoop">
+                                 <font>
+                                    <Font name="Segoe Print" size="24.0" />
+                                 </font>
+                              </Button>
+                              <TextArea fx:id="pathHadoop" prefHeight="64.0" prefWidth="635.0" promptText="Путь к hadoop">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextArea>
+                        <CheckBox fx:id="prepare_gpf" mnemonicParsing="false" text="Использовать prepare_gpf?">
+                           <font>
+                              <Font name="Segoe Print" size="24.0" />
+                           </font>
+                        </CheckBox>
+                              <Label text="Количество редукторов">
+                                 <font>
+                                    <Font name="Segoe Print" size="24.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="numReducers" promptText="Количество редукторов">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextArea>
+                              <Label text="Хост HDFS">
+                                 <font>
+                                    <Font name="Segoe Print" size="24.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="host" layoutX="230.0" layoutY="339.0" prefHeight="31.0" prefWidth="477.0" promptText="localhost:50071">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextArea>
+                        <Button fx:id="save" mnemonicParsing="false" text="Сохранить">
+                           <font>
+                              <Font name="Segoe Script" size="24.0" />
+                           </font>
+                        </Button>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+         </content>
+    </Tab>
+      <Tab text="Текущий прогресс">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="start" layoutX="40.0" layoutY="52.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" text="Старт">
+                     <font>
+                        <Font name="Segoe Print" size="12.0" />
+                     </font></Button>
+                 <!-- <Button fx:id="stop" disable="true" layoutX="40.0" layoutY="123.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="71.0" text="Стоп">
+                     <font>
+                        <Font name="Segoe Print" size="12.0" />
+                     </font></Button>-->
+                  <ProgressBar fx:id="progressDocking" layoutX="174.0" layoutY="53.0" prefHeight="34.0" prefWidth="302.0" progress="0.0" />
+                  <TextArea fx:id="log" editable="false" layoutX="171.0" layoutY="190.0" prefHeight="397.0" prefWidth="840.0" wrapText="true">
+                     <font>
+                        <Font name="Segoe Print" size="14.0" />
+                     </font></TextArea>
+                  <Label layoutX="171.0" layoutY="155.0" prefHeight="17.0" prefWidth="121.0" text="Журнал">
+                     <font>
+                        <Font name="Segoe Print" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="174.0" layoutY="21.0" prefHeight="32.0" prefWidth="181.0" text="Прогресс докинга">
+                     <font>
+                        <Font name="Segoe Print" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="procentDocking" layoutX="491.0" layoutY="53.0" prefHeight="34.0" prefWidth="149.0" text="0">
+                     <font>
+                        <Font name="Segoe Print" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="cleanLog" layoutX="22.0" layoutY="237.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="136.0" text="Очистить журнал" wrapText="true">
+                     <font>
+                        <Font name="Segoe Print" size="18.0" />
+                     </font></Button>
+                  <Button fx:id="saveLog" layoutX="23.0" layoutY="355.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="136.0" text="Сохранить журнал" wrapText="true">
+                     <font>
+                        <Font name="Segoe Print" size="18.0" />
+                     </font></Button>
+
+                  <Button fx:id="state" layoutX="23.0" layoutY="489.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Состояние">
+                     <font>
+                        <Font name="Segoe Print" size="16.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Состояние кластера">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <WebView fx:id="web" layoutX="4.0" layoutY="47.0" prefHeight="551.0" prefWidth="1054.0" />
+                  <TextField fx:id="url" layoutX="3.0" layoutY="15.0" prefHeight="34.0" prefWidth="603.0" promptText="http://localhost:50071">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="upload" layoutX="655.0" layoutY="17.0" mnemonicParsing="false" text="Обновить">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+     <Tab text="Информация о задачах">
+        <content>
+            <TableView fx:id="taskInfo">
+               <columns>
+                  <TableColumn fx:id="id_task" prefWidth="235.0" text="ID задачи" />
+                  <TableColumn fx:id="id_slave" minWidth="0.0" prefWidth="152.0" text="ID узла" />
+                  <TableColumn fx:id="dlg_path" prefWidth="433.0" text="Путь к DLG(HDFS)" />
+                  <TableColumn fx:id="task_status" prefWidth="234.0" text="Статус" />
+               </columns></TableView>
+        </content>
+     </Tab>
+  </tabs>
+</TabPane>
